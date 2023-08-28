@@ -1,3 +1,6 @@
 [submodule "yolomark"]
 	path = yolomark
 	url = https://github.com/AlexeyAB/Yolo_mark.git
+[submodule "ColabFileDownload"]
+	path = ColabFileDownload
+	url = https://github.com/jamesabsolom/ColabFileDownload.git
