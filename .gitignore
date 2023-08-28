@@ -3,3 +3,4 @@ Yolo_mark.code-workspace
 Testing Directory/test.jpg
 Testing Directory/obj.names
 Testing Directory/yolo-obj_last.weights
+.DS_Store
