@@ -1,15 +1,17 @@
 import Detector as DT
 import cv2
+import os
 
-configPath = "yolo-obj.cfg"
-modelPath = "yolo-obj_last.weights"
-classesPath = "obj.names"
+configPath = "C:\\Users\\NO\\Yolo-Example\\Testing Directory\\yolo-obj.cfg"
+modelPath = "C:\\Users\\NO\\Yolo-Example\\Testing Directory\\yolo-obj_last.weights"
+classesPath = "C:\\Users\\NO\\Yolo-Example\\Testing Directory\\obj.names"
 threshold = 0.7
 
 detector = DT.DetectorClass(configPath, modelPath, classesPath)
 
 # Read in the frame
-frame = cv2.imread("test.jpg")
+frame = cv2.imread("C:\\Users\\NO\\Yolo-Example\\Testing Directory\\test.jpg")
+frame = cv2.resize(frame, (640, 480))
 
 # Detect the objects
 idxs, boxes = detector.readFrame(False, True, frame, threshold)
@@ -23,6 +25,6 @@ if len(idxs) > 0:
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
 cv2.imshow("Frame", frame)
-if cv2.waitKey(1) & 0xFF == ord('q'):
+if cv2.waitKey(0) & 0xFF == ord('q'):
     cv2.destroyAllWindows()
 
