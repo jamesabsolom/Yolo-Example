@@ -1,0 +1,3 @@
+[submodule "yolomark"]
+	path = yolomark
+	url = https://github.com/AlexeyAB/Yolo_mark.git
