@@ -1,15 +1,34 @@
 <h1>Instructions:</h1>
 
+<h2>Setup:</h2>
+
 (I'm sorry if these instructions are all over the place or unclear, I'm not great at explaining things and it was 3am when I wrote this)
 
 * Download this repo
 
 * Install python 3.10.9 from <a href="https://www.python.org/downloads/release/python-3109/"> here </a> (I'm not sure if this is the only version that works, but it's the one I used)
 
-<h2>Yolo Mark:</h2>
+<h2>Box Drawing:</h2>
+    
+In this stage we are going to:
+<ol>
+    <li> <b> Download a marking software which allows us to draw boxes around what we want to track, this software is called <em>yolo mark</em> </b> </li>
+    <li> <b> Compile the software allowing it to work on your machine </b> </li>
+    <li> <b> Mark the images we want to track </b> </li>
+</ol>
 
-* Follow the instructions to install yolo-mark outlined here ![](Media/Screenshot1.png)
-* Follow the instructions to mark your images outlined here ![](Media/Screenshot2.png)
+<h3> Step 1 </h3>
+<ol>
+    <li> As a part of this repo you will get the yolo-mark software installed it will be in a folder called "yolomark" </li>
+    <li> We need to compile this software so that your computer can run it </li>
+    <li> To do this for windows you need to go to th
+</ol>
+
+Follow the instructions to install yolo-mark outlined here ![](Media/Screenshot1.png)
+
+<h3> Step 2 </h3>
+
+Follow the instructions to mark your images outlined here ![](Media/Screenshot2.png)
 
 <h2>Darknet Trainer:</h2>
 
