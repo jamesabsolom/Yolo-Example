@@ -27,4 +27,3 @@ if len(idxs) > 0:
 cv2.imshow("Frame", frame)
 if cv2.waitKey(0) & 0xFF == ord('q'):
     cv2.destroyAllWindows()
-
