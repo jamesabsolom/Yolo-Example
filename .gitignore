@@ -4,3 +4,10 @@ Testing Directory/test.jpg
 Testing Directory/obj.names
 Testing Directory/yolo-obj_last.weights
 .DS_Store
+Dataset Expansion/input/
+Dataset Expansion/output/
+Dataset Testing and Expansion/input/
+Dataset Testing and Expansion/output/
+Dataset Testing and Expansion/obj.names
+Dataset Testing and Expansion/yolo-obj.cfg
+Dataset Testing and Expansion/yolo-obj_last.weights

@@ -5,7 +5,7 @@ import os
 configPath = "C:\\Users\\NO\\Yolo-Example\\Testing Directory\\yolo-obj.cfg"
 modelPath = "C:\\Users\\NO\\Yolo-Example\\Testing Directory\\yolo-obj_last.weights"
 classesPath = "C:\\Users\\NO\\Yolo-Example\\Testing Directory\\obj.names"
-threshold = 0.7
+threshold = 0.2
 
 detector = DT.DetectorClass(configPath, modelPath, classesPath)
 
@@ -13,8 +13,11 @@ detector = DT.DetectorClass(configPath, modelPath, classesPath)
 frame = cv2.imread("C:\\Users\\NO\\Yolo-Example\\Testing Directory\\test.jpg")
 frame = cv2.resize(frame, (640, 480))
 
+with open(classesPath, 'r') as f:
+    classesList = f.read().splitlines()
+
 # Detect the objects
-idxs, boxes = detector.readFrame(False, True, frame, threshold)
+idxs, boxes, classIDs, confidences = detector.readFrame(False, True, frame, threshold)
 if len(idxs) > 0:
     for i in idxs.flatten():
         detected = False
@@ -23,6 +26,10 @@ if len(idxs) > 0:
         (w, h) = (boxes[i][2], boxes[i][3])
         # Draw a bounding box rectangle
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+        label = str(classesList[classIDs[i] - 1])
+        confidence = str(round(confidences[i], 2))
+        cv2.putText(frame, f"{label} {confidence}", (x + 5, y + 15), color=(0, 255, 0), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=0.5)
+
 
 cv2.imshow("Frame", frame)
 if cv2.waitKey(0) & 0xFF == ord('q'):
